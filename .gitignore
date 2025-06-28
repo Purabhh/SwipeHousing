@@ -12,3 +12,4 @@ config/keys.ts
 
 .setuptxt
 API_KEYS_SETUP.md
+.env
