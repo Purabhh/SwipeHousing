@@ -9,3 +9,7 @@ vite.config.ts.*
 api-keys.ts
 config/keys.ts
 .env.local
+
+.replit
+replit.md 
+API_KEYS_SETUP.md
