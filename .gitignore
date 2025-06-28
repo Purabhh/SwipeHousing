@@ -10,6 +10,5 @@ api-keys.ts
 config/keys.ts
 .env.local
 
-.replit
-replit.md 
+.setuptxt
 API_KEYS_SETUP.md
