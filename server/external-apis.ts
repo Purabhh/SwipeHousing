@@ -1,9 +1,8 @@
-import { API_KEYS, getApiKey, hasApiKey } from "../api-keys";
 
 // RentCast API for property market data
 export class RentCastService {
   static async getMarketData(address: string, zipCode: string) {
-    if (!hasApiKey('RENTCAST_API_KEY')) {
+    if (!process.env.RENTCAST_API_KEY) {
       console.log('RentCast API key not configured, using mock data');
       return {
         rentEstimate: Math.floor(Math.random() * 1000) + 1500,
@@ -16,7 +15,7 @@ export class RentCastService {
       const response = await fetch(`https://api.rentcast.io/v1/avm/rent/long-term`, {
         method: 'POST',
         headers: {
-          'X-Api-Key': getApiKey('RENTCAST_API_KEY'),
+          'X-Api-Key': process.env.RENTCAST_API_KEY,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
